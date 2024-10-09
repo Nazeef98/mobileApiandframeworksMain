@@ -1,6 +1,7 @@
 //importing express
 const express = require('express');
 const bodyParcer = require('body-parser');
+const mongoose = require('mpngoose');
 
 const app = express();
 
