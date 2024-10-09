@@ -1,7 +1,15 @@
 //importing express
 const express = require('express');
+const bodyParcer = require('body-parser');
 
 const app = express();
+
+app.use(bodyParcer.json());
+app.use(bodyParcer.urlencoded({extended:true}));
+
+app.get('/', (req,res) => {
+    res.send('server is up and running ')
+})
 
 //initialize port
 const port = 3000;
