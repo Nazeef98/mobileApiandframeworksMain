@@ -5,9 +5,6 @@ const mongoose = require('mongoose');
 
 const app = express();
 
-//mongoDB atlas connection
-const mongoURI = 'mongodb+srv://test:1hNSrF2z1ahFMy7v@cluster0.re95rja.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
-
 
 //connect to mongoDB atlas
 mongoose.connect(mongoURI)
