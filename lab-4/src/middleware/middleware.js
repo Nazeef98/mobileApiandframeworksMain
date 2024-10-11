@@ -1,10 +1,10 @@
-//for checking incoming request
+//Middleware to log incoming requests
 const logger = (req,res,next)=>{
     console.log(`${req.method}${req.originalUrl} - ${new Date().toISOString()}`);
     next();
 }
 
-//validation movies data
+//Validate Movie data before creating or updating
 const validateMovie = (req,res,next)=>{
 
     const{ title,studio,year,genres,directors} = req.body;

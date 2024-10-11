@@ -1,4 +1,4 @@
-const Movie = require('../models/Movies');
+const Movie = require('../models/movies-model');
 const fs =require('fs');
 
 //Function to get all the files

@@ -3,16 +3,16 @@ const router = express.Router();
 const movieController = require('../controllers/controller');
 const {validateMovie}=require('../middleware/middleware');
 
-//Route to get movies
+//Route to import movies
 router.post('/import',movieController.importMovies);
 
 //Route to get all movies
 router.get('/',movieController.getMovies);
 
-//Route to fecth a single movie by id
-router.get('/:id',movieController.getMovieById);
+//Route to get a single movie by id
+router.get('/:id',movieController.getMovieById)
 
-//Route to update a movie by id
+//Route to update a movie with id
 
 router.put('/update/:id', validateMovie,movieController.updateMovie);
 
