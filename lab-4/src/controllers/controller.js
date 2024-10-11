@@ -21,10 +21,13 @@ exports.getMovies = async (req, res) => {
             filter.genres = genre;
         }
 
-         // Add year to filter if query parameter is provided
+         // year filter if year paramitre is given
          if (year) {
             filter.year = Number(year); // Convert year to number
         }
+         // get movies from the database based on the filter
+         const movies = await Movie.find(filter);
+
         }
     }
 //Function to create a new movie
