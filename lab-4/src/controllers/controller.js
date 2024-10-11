@@ -96,7 +96,7 @@ exports.deleteMovie = async (req, res) => {
 
     }
     catch (error) {
-        console.error();
+        console.error(error);
         res.status(500).send('Error deleting the Movies');
     }
 };
