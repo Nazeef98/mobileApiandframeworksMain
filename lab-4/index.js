@@ -16,8 +16,8 @@ const app = express();
 
 //Read data from movies.json
 const data = JSON.parse(fs.readFileSync('./movies.json','utf-8'));
-//console.log(data);
-//Function to import movies from JSON
+
+//Function to get the  movies from JSON
 const importMovies = async (req, res) => {
     try {
         const count = await Movie.countDocuments();
@@ -41,7 +41,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(logger);//apply logger middleware
 
-// Define a root route
+// Define a  route
 app.get('/', (req, res) => {
     res.send('Welcome to the first program of Node.js Express');
 });
@@ -51,12 +51,12 @@ app.use('/movie', movieRoutes); // This will include all routes defined in route
 app.use(handleNotFound);//404 handler for routes not defined
 const port = process.env.PORT || 3000;
 
-// Start the server
+// Starting the server
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
 
-// Error handling middleware
+// Error handle middleware
 app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).send('Something went wrong!');

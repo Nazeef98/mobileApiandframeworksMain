@@ -4,7 +4,7 @@ const logger = (req,res,next)=>{
     next();
 }
 
-//Validate Movie data before creating or updating
+//Validate Movie data before creating 
 const validateMovie = (req,res,next)=>{
 
     const{ title,studio,year,genres,directors} = req.body;
