@@ -1,18 +1,19 @@
 const Movie = require('../models/movies-model');
 const fs =require('fs');
 
-//Function to get all the files
-exports.getMovies = async(req,res)=>{
-    try{
-        const movies = await Movie.find();
-         res.status(200).json(movies);
-    }
-    catch(e){
-            console.error(e);
-            res.status(500).send('Error retrieving Movies');
-    }
-};
 
+
+// Controller to get all movies (with optional search and filter functionality)
+exports.getMovies = async (req, res) => {
+    try {
+        // Extract query parameters from the request
+        const { title, genre, year } = req.query;
+
+         // Initialize a filter object for MongoDB query
+         let filter = {};
+    
+        }
+    }
 //Function to create a new movie
 exports.createMovie = async(req,res)=>{
     try{
