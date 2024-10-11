@@ -12,6 +12,10 @@ exports.getMovies = async (req, res) => {
          // Initialize a filter object for MongoDB query
          let filter = {};
     
+         // for filtering with the title
+        if (title) {
+            filter.title = { $regex: title, $options: 'i' }; // 'i' makes it case-insensitive
+        }
         }
     }
 //Function to create a new movie
