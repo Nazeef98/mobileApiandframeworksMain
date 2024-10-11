@@ -28,6 +28,8 @@ exports.getMovies = async (req, res) => {
          // get movies from the database based on the filter
          const movies = await Movie.find(filter);
 
+         // to send filter movie as response
+        res.status(200).json(movies);
         }
     }
 //Function to create a new movie
