@@ -16,6 +16,10 @@ exports.getMovies = async (req, res) => {
         if (title) {
             filter.title = { $regex: title, $options: 'i' }; // 'i' makes it case-insensitive
         }
+         // Add genre to filter if query parameter is provided
+         if (genre) {
+            filter.genres = genre;
+        }
         }
     }
 //Function to create a new movie
