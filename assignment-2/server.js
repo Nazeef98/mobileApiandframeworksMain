@@ -10,7 +10,7 @@ app.use(express.json())
 
 //message comes up when server is up and runnign without error
 app.get('/', (req,res) => {
-    res.send('server is up and running ')
+    res.send('I am learning new things in mobile API and frameworks  ')
 })
 app.use('/recipe',initializeRecipeRoute())
 
