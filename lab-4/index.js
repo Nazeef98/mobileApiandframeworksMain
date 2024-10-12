@@ -15,7 +15,7 @@ InitiateMongoServer();
 const app = express();
 
 //Read data from movies.json
-const data = JSON.parse(fs.readFileSync('./movies.json','utf-8'));
+const data = JSON.parse(fs.readFileSync('./movies.json','utf-8'))
 
 //Function to get the  movies from JSON
 const importMovies = async (req, res) => {
