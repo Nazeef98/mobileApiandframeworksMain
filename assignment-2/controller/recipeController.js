@@ -35,7 +35,19 @@ const recipeById = (req, res) => {
     })
 }
 
+//to add new recipe
+const createNewRecipe = (req,res) => {
+    Recipe.create(req.body).then(records => {
+        res.json(records)
+    }).catch(error => {
+        console.log(error);
+        res.json({
+            error
+        })
 
+    })
+
+}
 
 const getTopRecipe = (req, res) => {
 
@@ -57,5 +69,6 @@ const getTopRecipe = (req, res) => {
 module.exports = {
     getTopRecipe,
     getList,
-    recipeById
+    recipeById,
+    createNewRecipe
 }
