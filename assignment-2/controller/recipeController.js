@@ -9,7 +9,7 @@ const Recipe = require('../models/recipe')
 
 
 
-const getRecipeList = (req, res) => {
+const getTopRecipe = (req, res) => {
     
     //logic for getting top records first with limit of 20 
  Recipe.find().sort({averageRating: -1}).limit(20).then(records => {
@@ -24,7 +24,9 @@ const getRecipeList = (req, res) => {
     
 }
 
+
+
 module.exports = {
-    getRecipeList,
+    getTopRecipe,
     
 }

@@ -5,15 +5,15 @@
 
 const express = require('express');
 
-// Import the getRecipeList
-const { getRecipeList } = require('../controller/recipeController');
+// Import the getTopRecipe
+const { getTopRecipe } = require('../controller/recipeController');
 
 
 const router = express.Router();
 
 // Function to initialize the recipe route
 const initializeRecipeRoute = () => {
-    router.get('/list', getRecipeList)
+    router.get('/list', getTopRecipe)
     return router
 }
 // Export the initializeRecipeRoute
