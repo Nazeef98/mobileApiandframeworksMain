@@ -4,9 +4,21 @@
 // 12/10/24
 
 const express = require('express');
-const Recipe = require('../models/recipe')
+const Recipe = require('../models/recipe');
+const recipe = require('../models/recipe');
 
-
+//to get the list
+const getList = (req,res)=>{
+    Recipe.find().then(records => {
+        res.json(records)
+      }).catch(error =>{
+         console.log(error);
+         res.json({
+             error
+         })
+         
+      })
+}
 
 
 const getTopRecipe = (req, res) => {
