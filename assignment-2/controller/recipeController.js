@@ -7,7 +7,7 @@ const express = require('express');
 const Recipe = require('../models/recipe');
 const recipe = require('../models/recipe');
 
-//to get the list
+//to get the list items
 const getList = (req,res)=>{
     Recipe.find().then(records => {
         res.json(records)
@@ -40,5 +40,5 @@ const getTopRecipe = (req, res) => {
 
 module.exports = {
     getTopRecipe,
-    
+    getList
 }

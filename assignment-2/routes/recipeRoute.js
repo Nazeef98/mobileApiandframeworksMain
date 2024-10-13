@@ -13,7 +13,9 @@ const router = express.Router();
 
 // Function to initialize the recipe route
 const initializeRecipeRoute = () => {
-    router.get('/list', getTopRecipe)
+    router.get('/top20', getTopRecipe)
+    router.get('/list', getList)
+
     return router
 }
 // Export the initializeRecipeRoute
