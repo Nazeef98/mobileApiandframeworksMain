@@ -6,7 +6,7 @@
 const express = require('express');
 
 // Import the getTopRecipe
-const { getTopRecipe } = require('../controller/recipeController');
+const { getTopRecipe,getList,recipeById } = require('../controller/recipeController');
 
 
 const router = express.Router();
@@ -15,6 +15,7 @@ const router = express.Router();
 const initializeRecipeRoute = () => {
     router.get('/top20', getTopRecipe)
     router.get('/list', getList)
+    router.get('/find/:id',recipeById)
 
     return router
 }
