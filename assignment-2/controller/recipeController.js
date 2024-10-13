@@ -62,6 +62,22 @@ const createNewRecipe = (req,res) => {
 
     })
  }
+ 
+//for deleting record
+ const deleteRecipe =(req,res) =>{
+    const { id } = req.params
+    Recipe.deleteOne({_id:id}).then(records => {
+        res.json(records)
+    }).catch(error => {
+        console.log(error);
+        res.json({
+            error
+        })
+
+    })
+
+    
+ }
 
 const getTopRecipe = (req, res) => {
 
@@ -87,5 +103,6 @@ module.exports = {
     getList,
     recipeById,
     createNewRecipe,
-    updateRecipe
+    updateRecipe,
+    deleteRecipe
 }
