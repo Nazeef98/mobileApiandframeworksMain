@@ -1,11 +1,10 @@
 // recipeController.js
 // Nazeef Ahmad Farooqui
 // 200590966
-// 12/10/24
+// 13/10/24
 
 const express = require('express');
 const Recipe = require('../models/recipe');
-const recipe = require('../models/recipe');
 
 //to get the list items
 const getList = (req, res) => {
@@ -62,7 +61,7 @@ const createNewRecipe = (req,res) => {
 
     })
  }
- 
+
 //for deleting record
  const deleteRecipe =(req,res) =>{
     const { id } = req.params
