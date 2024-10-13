@@ -1,3 +1,7 @@
+// userController.js
+// Nazeef Ahmad Farooqui
+// 200590966
+// 13/10/24
 const express = require('express');
 const User = require('../models/user');
 

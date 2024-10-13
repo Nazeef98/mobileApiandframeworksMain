@@ -25,7 +25,7 @@ const initializeRecipeRoute = () => {
     //route to create new 
     router.post('/create',createNewRecipe)
 
-    //route to update byUD
+    //route to update by ID
     router.put('/:id',updateRecipe)
 
     //route to delete by ID
