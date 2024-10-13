@@ -49,6 +49,20 @@ const createNewRecipe = (req,res) => {
 
 }
 
+//function for updating the recipe
+ const updateRecipe = (req,res) =>{
+    const { id } = req.params
+    Recipe.updateOne({_id:id},req.body).then(records => {
+        res.json(records)
+    }).catch(error => {
+        console.log(error);
+        res.json({
+            error
+        })
+
+    })
+ }
+
 const getTopRecipe = (req, res) => {
 
     //logic for getting top records first with limit of 20 
@@ -61,6 +75,8 @@ const getTopRecipe = (req, res) => {
         })
 
     })
+
+    
 
 }
 
