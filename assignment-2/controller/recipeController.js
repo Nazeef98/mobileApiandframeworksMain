@@ -86,5 +86,6 @@ module.exports = {
     getTopRecipe,
     getList,
     recipeById,
-    createNewRecipe
+    createNewRecipe,
+    updateRecipe
 }
