@@ -2,9 +2,13 @@
 // Nazeef Ahmad Farooqui
 // 200590966
 // 13/10/24
+
+
 const express = require('express');
 const User = require('../models/user');
 
+
+//logic for register
 const register = (req, res) => {
     console.log(req.body)
     User.create(req.body).then(records => {
@@ -17,7 +21,7 @@ const register = (req, res) => {
 
     })
 }
-
+//logic for login
 const login = (req, res) => {
 
     const { email, password } = req.body
@@ -39,6 +43,8 @@ const login = (req, res) => {
 
    
 }
+
+//logi for logout
 const logout = (req, res) => {
 
     res.json({message: 'logout successfull'})
