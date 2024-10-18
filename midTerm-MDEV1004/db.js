@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 const MONGOURI = "mongodb+srv://test:1hNSrF2z1ahFMy7v@cluster0.re95rja.mongodb.net/test";
 
+
+//mongo DB connection is established in this file
 const InitiateMongoServer = async()=>{
     try{
         await mongoose.connect(MONGOURI);

@@ -49,7 +49,7 @@ exports.getUserById = async (req, res) => {
         res.status(500).send('Error getting the user');
     }
 };
-//i is used for case insenstivity
+//i is used for case insenstivity while searching it will get the exact details matching in the data 
 exports.getUserByLocation = async (req, res) => {
     try {
         const user = await User.find({ 'userData.location': { $regex: req.params.location , $options: 'i' } });

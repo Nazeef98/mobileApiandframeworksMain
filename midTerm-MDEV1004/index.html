@@ -12,6 +12,7 @@
   <pre id="results"></pre>
    
   <script>
+    //js code  to display the all users when button is clickec
     document.getElementById('getAllUsers').addEventListener('click', async () => {
       try {
         const response = await fetch('/user');
@@ -26,7 +27,8 @@
         document.getElementById('results').textContent = error.message;
       }
     });
-
+ 
+    //to get the list of user by ID 
     document.getElementById('getUserById').addEventListener('click', async () => {
       const id = prompt('Enter User ID'); // Prompt for user ID
 
@@ -46,6 +48,7 @@
       }
     });
 
+    //to get the user info by location 
     document.getElementById('getUsersByLocation').addEventListener('click', async () => {
       const location = prompt('Enter location'); // Prompt for user location
 
@@ -65,7 +68,7 @@
       }
     });
     // Function to display results in the <pre> tag
-        
+
     function displayResults(data) {
       document.getElementById('results').textContent = JSON.stringify(data, null, 2);
     }
