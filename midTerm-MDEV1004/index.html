@@ -12,7 +12,45 @@
   <pre id="results"></pre>
    
   <script>
-   
+    document.getElementById('getAllUsers').addEventListener('click', async () => {
+      try {
+        const response = await fetch('/user');
+        
+        if (!response.ok) {
+          throw new Error(`Error: ${response.status} ${response.statusText}`);
+        }
+
+        const data = await response.json();
+        displayResults(data);
+      } catch (error) {
+        document.getElementById('results').textContent = error.message;
+      }
+    });
+
+    document.getElementById('getUserById').addEventListener('click', async () => {
+      const id = prompt('Enter User ID'); // Prompt for user ID
+
+      if (!id) return; // Exit if no ID is provided
+
+      try {
+        const response = await fetch(`/user/${id}`);
+
+        if (!response.ok) {
+          throw new Error(`Error: ${response.status} ${response.statusText}`);
+        }
+
+        const data = await response.json();
+        displayResults(data);
+      } catch (error) {
+        document.getElementById('results').textContent = error.message;
+      }
+    });
+
+
+    // Function to display results in the <pre> tag
+    function displayResults(data) {
+      document.getElementById('results').textContent = JSON.stringify(data, null, 2);
+    }
   </script>
 </body>
 </html>
