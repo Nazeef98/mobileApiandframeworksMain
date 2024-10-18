@@ -43,7 +43,7 @@ app.use(logger);//apply logger middleware
 
 // Define a  route
 app.get('/', (req, res) => {
-    res.send('Welcome to the first program of Node.js Express');
+    res.send('Lab-5 workspace is created and it is deployed on render.com');
 });
 
 // Use the movie routes
