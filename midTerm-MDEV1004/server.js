@@ -3,6 +3,8 @@ const express = require('express');
 const app = express();
 const fs = require('fs');
 const path = require('path');
+const InitiateMongoServer = require('./db');
+InitiateMongoServer();
 
 //to read the usedData from the JSON file and show it on the local host
 const userData = JSON.parse(fs.readFileSync('./users.json','utf-8'));
