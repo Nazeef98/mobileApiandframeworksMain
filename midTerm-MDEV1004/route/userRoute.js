@@ -11,6 +11,9 @@ userRoute.get('/', userController.getUsers);
 //routes to get the user by the ID 
 userRoute.get('/:id',userController.getUserById)
 
+//route to get the info with the location 
+userRoute.get('/location/:location',userController.getUserByLocation)
+
 
 
 module.exports = userRoute;

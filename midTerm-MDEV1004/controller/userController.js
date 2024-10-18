@@ -49,3 +49,18 @@ exports.getUserById = async (req, res) => {
         res.status(500).send('Error getting the user');
     }
 };
+//i is used for case insenstivity
+exports.getUserByLocation = async (req, res) => {
+    try {
+        const user = await User.find({ 'userData.location': { $regex: req.params.location , $options: 'i' } });
+        if (!user) {
+            return res.status(404).send('user is not available');
+        }
+        res.status(201).json(user);
+
+    }
+    catch (e) {
+        console.error(e);
+        res.status(500).send('Error getting the user');
+    }
+};

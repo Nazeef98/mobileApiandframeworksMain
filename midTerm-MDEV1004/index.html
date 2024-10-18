@@ -46,8 +46,26 @@
       }
     });
 
+    document.getElementById('getUsersByLocation').addEventListener('click', async () => {
+      const location = prompt('Enter location'); // Prompt for user location
 
+      if (!location) return; 
+
+      try {
+        const response = await fetch(`/user/location/${location}`);
+
+        if (!response.ok) {
+          throw new Error(`Error: ${response.status} ${response.statusText}`);
+        }
+
+        const data = await response.json();
+        displayResults(data);
+      } catch (error) {
+        document.getElementById('results').textContent = error.message;
+      }
+    });
     // Function to display results in the <pre> tag
+        
     function displayResults(data) {
       document.getElementById('results').textContent = JSON.stringify(data, null, 2);
     }
