@@ -1,0 +1,12 @@
+{
+  "name": "midterm-mdev1004",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "nazeef ahmad farooqui",
+  "license": "ISC",
+  "description": ""
+}
