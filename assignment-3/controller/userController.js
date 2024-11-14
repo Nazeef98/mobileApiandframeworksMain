@@ -5,8 +5,10 @@
 
 
 const express = require('express');
-const jwt = require('jsonwebtoken'); // Import jsonwebtoken
+const jwt = require('jsonwebtoken'); 
 const User = require('../models/user');
+
+const JWT_SECRET = 'nazeefkey';
 
 
 //logic for register
@@ -24,26 +26,20 @@ const register = (req, res) => {
 }
 //logic for login
 const login = (req, res) => {
-
-    const { email, password } = req.body
-    User.findOne({ email, password }).then(records => {
-        if (records) {
-            res.status(200).json({ message: 'Login successfull', user: records })
-
+    const { email, password } = req.body;
+    User.findOne({ email, password }).then(user => {
+        if (user) {
+             //logic to get token and with the logic that expires in  1 hour
+            const token = jwt.sign({ id: user._id }, JWT_SECRET, { expiresIn: '1h' });
+            res.status(200).json({ message: 'Login successful', token }); // Respond with token
         } else {
-            res.status(401).json({ message: 'user not found' })
-
+            res.status(401).json({ message: 'User not found' });
         }
     }).catch(error => {
         console.log(error);
-        res.json({
-            error
-        })
-
-    })
-
-   
-}
+        res.json({ error });
+    });
+};
 
 //logi for logout
 const logout = (req, res) => {
