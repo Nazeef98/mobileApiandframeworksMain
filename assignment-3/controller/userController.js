@@ -5,6 +5,7 @@
 
 
 const express = require('express');
+const jwt = require('jsonwebtoken'); // Import jsonwebtoken
 const User = require('../models/user');
 
 
