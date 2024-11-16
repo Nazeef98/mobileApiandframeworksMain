@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, StyleSheet } from 'react-native';
 import axios from 'axios';
 
+
+//schema for the display items
 type Recipe = {
     _id?: string;
     recipeName?: string;
@@ -9,12 +11,14 @@ type Recipe = {
     averageRating?: number;
 };
 
+
 const RecipeList = () => {
     const [recipes, setRecipes] = useState<Recipe[]>([]);
 
     useEffect(() => {
         console.log("Starting API call..."); // Log before the request
     
+        //use local host so that it get details from the localhost server
         axios.get('http://localhost:3000/recipe') // Use 10.0.2.2 instead of localhost
             .then(response => {
                 console.log("API response received:", response.data); // Log the response data
@@ -25,7 +29,7 @@ const RecipeList = () => {
             });
     }, []);
     
-
+//code is for the table view list item to show the details 
     const renderItem = ({ item }: { item: Recipe }) => (
         <View style={styles.item}>
             <Text style={styles.title}>{item.recipeName || "No Name Available"}</Text>
