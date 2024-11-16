@@ -46,6 +46,7 @@ const RecipeList = () => {
                 renderItem={renderItem}
             />
         ) : (
+            //this appears when the backend server is not running
             <View style={styles.loading}>
                 <Text>Loading recipes...</Text>
             </View>
